@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Net;
 
 namespace BosnetFinance.Models.ViewModels
 {
     public class TransactionResponse
     {
-        public string TransactionId { get; set; }
-        public string Status { get; set; }
+        public object Data { get; set; }
+        public HttpStatusCode Status { get; set; }
         public string Message { get; set; }
     }
 }

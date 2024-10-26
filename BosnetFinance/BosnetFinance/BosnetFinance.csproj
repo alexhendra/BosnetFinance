@@ -129,6 +129,7 @@
     <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Core\Configuration.cs" />
     <Compile Include="Core\Cryptography.cs" />
+    <Compile Include="Core\ErrorCode.cs" />
     <Compile Include="Core\TransactionType.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
