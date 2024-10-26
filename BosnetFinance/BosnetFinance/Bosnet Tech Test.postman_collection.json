@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "af9629b3-2c26-4ed3-926c-1c53781453ec",
+		"name": "Bosnet Tech Test",
+		"description": "# Introduction\n\nThis Web API is used to simplify the process of Withdrawing, Depositing and Transferring money.\n\n# Authentication\n\nNo need authentication right now\n\n# Error Codes\n\n**500** : If an unexpected error occurs.\n\n**400**: If the data sent is incorrect.\n\n**200**: If the data was processed successfully.\n\n**201**: If the data was saved successfully or data was successfully added.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13368525"
+	},
+	"item": [
+		{
+			"name": "Get Transaction History",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/transaction/history?accountId=000108888888&startDate=2024-01-01&endDate=2024-12-31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transaction",
+						"history"
+					],
+					"query": [
+						{
+							"key": "accountId",
+							"value": "000108888888"
+						},
+						{
+							"key": "startDate",
+							"value": "2024-01-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2024-12-31"
+						}
+					]
+				},
+				"description": "**Retrieving transaction history data based on specific accounts and dates.**"
+			},
+			"response": [
+				{
+					"name": "Get Transaction History",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/transaction/history?accountId=000108888888&startDate=2024-01-01&endDate=2024-12-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"transaction",
+								"history"
+							],
+							"query": [
+								{
+									"key": "accountId",
+									"value": "000108888888"
+								},
+								{
+									"key": "startDate",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-12-31"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Deposit Money",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": \"000108888888\",\r\n    \"amount\": 100.00,\r\n    \"currencyCode\": \"USD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/transaction/deposit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transaction",
+						"deposit"
+					]
+				},
+				"description": "**Make a deposit into a user account in a specific currency.**"
+			},
+			"response": [
+				{
+					"name": "Deposit Money",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountId\": \"000108888888\",\r\n    \"amount\": 200.00,\r\n    \"currencyCode\": \"USD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/transaction/deposit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"transaction",
+								"deposit"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?RjpcU291cmNlQ29kZVxnaXRodWJcQm9zbmV0RmluYW5jZVxCb3NuZXRGaW5hbmNlXEJvc25ldEZpbmFuY2VcYXBpXHRyYW5zYWN0aW9uXGRlcG9zaXQ=?="
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Oct 2024 11:36:55 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "110"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": {\n        \"TransactionId\": \"20241026-00000.00008\"\n    },\n    \"Status\": 201,\n    \"Message\": \"Transaction successfully completed.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Transfer Money",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": \"000108888888\",\r\n    \"amount\": 101,\r\n    \"currencyCode\": \"USD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/transaction/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transaction",
+						"transfer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Transfer Money",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountId\": \"000108888888\",\r\n    \"amount\": 101,\r\n    \"currencyCode\": \"USD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/transaction/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"transaction",
+								"transfer"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Server",
+							"value": "Microsoft-IIS/10.0"
+						},
+						{
+							"key": "X-AspNet-Version",
+							"value": "4.0.30319"
+						},
+						{
+							"key": "X-SourceFiles",
+							"value": "=?UTF-8?B?RjpcU291cmNlQ29kZVxnaXRodWJcQm9zbmV0RmluYW5jZVxCb3NuZXRGaW5hbmNlXEJvc25ldEZpbmFuY2VcYXBpXHRyYW5zYWN0aW9uXHRyYW5zZmVy?="
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "ASP.NET"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Oct 2024 11:54:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Data\": null,\n    \"Status\": 400,\n    \"Message\": \"Your balance is insufficient to perform this transaction!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Withdraw Money",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": \"000108888888\",\r\n    \"amount\": 100.00,\r\n    \"currencyCode\": \"USD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/transaction/withdraw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"transaction",
+						"withdraw"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Withdraw Money",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountId\": \"000108888888\",\r\n    \"amount\": 100.00,\r\n    \"currencyCode\": \"USD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/transaction/withdraw",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"transaction",
+								"withdraw"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
